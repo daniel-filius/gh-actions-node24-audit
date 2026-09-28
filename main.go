@@ -24,8 +24,9 @@ import (
 	"github.com/cli/go-gh/v2/pkg/repository"
 )
 
-// version is overwritten at build time by gh-extension-precompile (-ldflags).
-var version = "dev"
+// version is bumped by hand before tagging a release: cli/gh-extension-precompile
+// builds with -ldflags="-s -w" only and offers no hook to inject the tag.
+var version = "v0.1.1"
 
 func main() {
 	os.Exit(run(os.Args[1:], os.Stdout, os.Stderr))
