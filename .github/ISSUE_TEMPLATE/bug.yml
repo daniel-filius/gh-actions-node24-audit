@@ -1,0 +1,23 @@
+name: Bug report
+description: Wrong runtime, wrong suggestion, crash or API error.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: cmd
+    attributes:
+      label: Command
+      placeholder: gh actions-node24-audit --repo owner/repo --json
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output (paste the table or the JSON)
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?

@@ -1,0 +1,39 @@
+name: Sponsor this project
+description: Put your CI/runner product in the "Sponsored by" slot at the top of the README.
+title: "[sponsor] <company>"
+labels: ["sponsor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One "Sponsored by" slot at the top of the README, shown to everyone who installs or browses the extension.
+        Payment via Pix (Brazil) or Wise; invoice on request. Reply here or leave a contact below - there is no e-mail address on purpose.
+  - type: input
+    id: company
+    attributes:
+      label: Company / product
+      placeholder: Acme Runners
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to show
+      placeholder: https://example.com/?ref=gh-actions-node24-audit
+    validations:
+      required: true
+  - type: dropdown
+    id: term
+    attributes:
+      label: Term
+      options:
+        - 1 month
+        - 3 months
+        - 6 months
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Budget, logo, wording constraints, how to reach you.

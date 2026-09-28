@@ -1,0 +1,7 @@
+# binaries built locally (the extension name itself is the binary name gh expects)
+/gh-actions-node24-audit
+/gh-actions-node24-audit.exe
+/dist/
+*.test
+*.out
+.env

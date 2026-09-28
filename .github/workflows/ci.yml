@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - run: go vet ./...
+      - run: go test ./...
+      # Dogfooding: fail the build if this very repository still uses a
+      # node16/node20 action. GITHUB_TOKEN is enough for public repositories.
+      - name: audit own workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: go run . --repo ${{ github.repository }} --include-composite --exit-code

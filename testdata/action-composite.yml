@@ -1,0 +1,8 @@
+name: composite-thing
+runs:
+  using: composite
+  steps:
+    - uses: octo/inner-old@v1
+    - run: echo hi
+      shell: bash
+    - uses: octo/inner-new@v2
